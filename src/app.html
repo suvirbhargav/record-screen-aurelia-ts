@@ -1,0 +1,44 @@
+<template>
+  <require from="app.css"></require>
+
+  <div class="message">
+    <style>
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+          Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        font-size: 1em;
+      }
+
+      video {
+        width: 30%;
+        border-radius: 5px;
+        border: 1px solid black;
+      }
+
+    </style>
+
+    <title>Screen Recording | RecordRTC</title>
+    <h1 ref="headerRef">Screen Recording using RecordRTC</h1>
+
+    <br />
+
+    <!-- <button ref="btnStartRecording" id="btn-start-recording">Start Recording</button> -->
+    <button id="btnStartRecording" ref="btnStartRecording" click.delegate="startRecording()">
+      Start Recording
+    </button>
+    <button ref="btnStopRecording" disabled.bind="stopButtonStatus" click.trigger="stopRecording()">
+      Stop Recording
+    </button>
+
+    <hr />
+    <video ref="theVideo" controls autoplay playsinline></video>
+
+    <!-- <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script> -->
+  </div>
+</template>
